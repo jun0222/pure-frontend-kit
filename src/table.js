@@ -1,34 +1,47 @@
 // テーブルのレイアウトを生成し、クリックでコピーできる機能を追加
 export function createClickableTable(containerId, data) {
   const container = document.querySelector(`#${containerId}`);
+
+  if (!container) {
+    console.error(`Element with id "${containerId}" not found.`);
+    return;
+  }
+
   const table = document.createElement("table");
   table.style.width = "100%";
   table.style.borderCollapse = "collapse";
+  table.style.marginTop = "20px";
 
   const thead = document.createElement("thead");
   thead.innerHTML = `
         <tr>
-            <th>説明</th>
-            <th>コンテンツ</th>
+            <th style="border: 1px solid black; padding: 10px; background-color: #f2f2f2;">説明</th>
+            <th style="border: 1px solid black; padding: 10px; background-color: #f2f2f2;">コンテンツ</th>
         </tr>`;
   table.appendChild(thead);
 
   const tbody = document.createElement("tbody");
-  data.forEach((item) => {
+  data.forEach((item, index) => {
     const row = document.createElement("tr");
     row.className = "item";
-    row.innerHTML = `<td>${item.description}</td><td>${item.content}</td>`;
+    row.innerHTML = `<td style="border: 1px solid black; padding: 10px;">${item.description}</td>
+                     <td style="border: 1px solid black; padding: 10px;">${item.content}</td>`;
     row.style.cursor = "pointer";
     row.onclick = () => {
       navigator.clipboard.writeText(item.content).then(() => {
         showToast("コピーしました");
       });
     };
+    // 奇数行に背景色を追加
+    if (index % 2 !== 0) {
+      row.style.backgroundColor = "#f9f9f9";
+    }
     row.onmouseover = () => {
-      row.style.backgroundColor = "#f0f0f0";
+      row.style.backgroundColor = "#d0d0d0";
     };
     row.onmouseout = () => {
-      row.style.backgroundColor = "";
+      // マウスが離れたら元の背景色に戻す
+      row.style.backgroundColor = index % 2 !== 0 ? "#f9f9f9" : "";
     };
     tbody.appendChild(row);
   });
