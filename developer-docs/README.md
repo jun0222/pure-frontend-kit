@@ -4,5 +4,5 @@
 
 ```bash
 npm login
-npm publish
+rm -rf node_modules && npm install && npx webpack && npm publish
 ```
