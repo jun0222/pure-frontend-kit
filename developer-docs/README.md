@@ -13,3 +13,4 @@ rm -rf node_modules && npm install && npx webpack && npm publish
 
 1. `src/` に機能を追加する。
 2. `src/index.js` に export を追加する。
+3. example ディレクトリに機能の使い方を記述する。
