@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/pure-frontend-kit@latest/dist/pure-frontend-kit.min.js"></script>
+    <title>cheatSheetContainer</title>
+  </head>
+  <body>
+    <!-- コピー可能なテーブル作成機能を利用 -->
+    <!-- ここにcheatSheetContainer要素を追加 -->
+    <div id="cheatSheetContainer"></div>
+    <script>
+      const cheatSheetData = [
+        {
+          description: "コピーされない文字1",
+          content: "コピーされる文字1",
+        },
+        {
+          description: "コピーされない文字2",
+          content: "コピーされる文字2",
+        },
+        {
+          description: "コピーされない文字3",
+          content: "コピーされる文字3",
+        },
+        // 他のデータを追加
+      ];
+
+      // テーブルを生成
+      PureFrontendKit.createClickableTable(
+        "cheatSheetContainer",
+        cheatSheetData
+      );
+    </script>
+  </body>
+</html>
