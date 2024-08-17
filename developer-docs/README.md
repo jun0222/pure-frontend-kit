@@ -8,3 +8,8 @@ package.json のバージョン指定などをしたあと以下のコマンド�
 npm login
 rm -rf node_modules && npm install && npx webpack && npm publish
 ```
+
+## 機能を追加するとき
+
+1. `src/` に機能を追加する。
+2. `src/index.js` に export を追加する。
