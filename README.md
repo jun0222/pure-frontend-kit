@@ -1,8 +1,8 @@
 ## pure-frontend-kit
 
 - ピュアな HTML/CSS/JavaScript のみで構成されたフロントエンド開発ライブラリ。
-- Github: https://www.npmjs.com/package/pure-frontend-kit
-- npm: https://github.com/jun0222/pure-frontend-kit
+- Github: https://github.com/jun0222/pure-frontend-kit
+- npm: https://www.npmjs.com/package/pure-frontend-kit
 
 ## インストール
 
